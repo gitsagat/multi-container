@@ -18,7 +18,6 @@ services:
      restart: always
      volumes:
        - "${PWD}/data_mysql1:/var/lib/mysql"
-       - "/tmp/db_site1:/tmp"     
      environment:
        MYSQL_ROOT_PASSWORD: somewordpress
        MYSQL_DATABASE: wordpress
@@ -33,7 +32,6 @@ services:
      restart: always
      volumes:
        - "${PWD}/data_mysql2:/var/lib/mysql"
-       - "/tmp/db_site2:/tmp"     
      environment:
        MYSQL_ROOT_PASSWORD: somewordpress
        MYSQL_DATABASE: wordpress
