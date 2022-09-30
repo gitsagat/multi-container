@@ -6,7 +6,14 @@ sudo service docker start
 sleep 5
 docker-compose -f docker-compose.yml up -d
 sleep 5
-sudo cp wp1.sagat.com.br /etc/nginx/sites-available/
-ln -s /etc/nginx/sites-available/wp1.sagat.com.br /etc/nginx/sites-enabled/
+certbot --nginx -d wp1.sagat.com.br
+sudo cp wp1sagat.conf /etc/nginx/sites-available/
+ln -s /etc/nginx/sites-available/wp1sagat.conf /etc/nginx/sites-enabled/
+
+sleep 5
+certbot --nginx -d wp2.sagat.com.br
+sudo cp wp2sagat.conf /etc/nginx/sites-available/
+ln -s /etc/nginx/sites-available/wp2sagat.conf /etc/nginx/sites-enabled/
+
 nginx -t 
 systemctl restart nginx
