@@ -7,6 +7,7 @@ sleep 5
 docker-compose -f docker-compose.yml up -d
 sleep 5
 certbot --nginx -d wp1.sagat.com.br
+#sudo certbot certonly --nginx
 sudo cp wp1sagat.conf /etc/nginx/sites-available/
 ln -s /etc/nginx/sites-available/wp1sagat.conf /etc/nginx/sites-enabled/
 
